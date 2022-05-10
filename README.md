@@ -2,6 +2,10 @@
 
 Repository with the coding part of the master thesis from Marcel Hecker. Created for HTW Dresden.
 
+### Docs:
+
+You can find the [Documentation here](https://heckerhere.github.io/masterthesis_praxis/index). 
+
 ### Functions:
 
 **Import** - You can import a file with different citys, streets or other sort of geographic features to geocode them. The file should be .txt format and every line contains one search query item. The following  shows an example:
