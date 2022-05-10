@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+}
+
+.divider {
+    background-color: #000;
+}
+
+#search-form {
+    z-index: 10;
+    position: absolute;
+    margin: 10px 50px;
+}
+
+#search-form article {
+    margin: 0;
+}
+
+#right-menu {
+    position: absolute;
+    text-align: right;
+    right: 0;
+    z-index: 10;
+    margin: 10px 40px;
+}
+
+#right-menu article {
+    margin: 10px 0px;
+}
+
+#result-form {
+    z-index: 10;
+    position: relative;
+}
+
+#search-list {
+    z-index: 10;
+    position: relative;
+    background-color: white;
+    opacity: 0.8;
+}
+
+#search-list p {
+    margin: 0px 0px 5px 5px;
+}
+
+#map {
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+}
+
+#right-menu [data-tooltip]::after,
+[data-tooltip]::before {
+    bottom: -50px;
+}
+
+#right-menu [data-tooltip]::after {
+    transform: rotate(180deg) translate(50%, 40px);
+}
+
+.blurchange {
+    filter: blur(1px);
+}
+
+.leaflet-marker-icon {
+    background: none;
+    border: none;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+}
+
+input:not([type=checkbox]):not([type=radio]), select, textarea {
+    width: auto;
+    margin-bottom: 0;
+}
+
+.legend img {
+    width: 20px;
+    height: fit-content;
+}
+
+.legend h4 {
+    text-align: center;
+}
+
+.legend div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.legend p {
+    margin-bottom: 10px;
+}

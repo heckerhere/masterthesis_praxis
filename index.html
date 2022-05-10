@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <title>Masterarbeit Marcel Hecker | Geocoding Optimierung</title>
+
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin="" />
+  <link rel="stylesheet" href="css/pico.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div id="search-form">
+    <article>
+      <h4>Manual Search</h4>
+      <input type="text" id="form-input" placeholder="Search Feature">
+      <div id="search-list"></div>
+      <hr class="divider">
+      <div id="result-form">
+
+      </div>
+    </article>
+  </div>
+  <!-- batchSearch(testSearch) -->
+  <!-- batchTest() -->
+  <div id="right-menu">
+    <a href="#" role="button" data-tooltip="Import file" onclick="document.getElementById('file-input').click();"><i
+      class="fa-solid fa-file-import"></i></a>
+    <input type="file" style="display:none;" id="file-input" name="file"/>
+    <a href="#" id="downloadFile" role="button" data-tooltip="Export file" onClick="downloadMarkers()"><i
+        class="fa-solid fa-file-export"></i></a>
+    <a href="#" role="button" data-tooltip="Reload page" onClick="window.location.reload();"><i
+        class="fa-solid fa-arrows-rotate"></i></a>
+
+    <article>
+      <div class="legend">
+        <h4>Legend</h4>
+        <p>Distance to reference data:</p>
+        <div>
+          <img src="img/marker-icon-blue.png" alt="bluemarker">
+          <p>equal match</p>
+        </div>
+        <div>
+          <img src="img/marker-icon-orange.png" alt="bluemarker">
+          <p> more than 1 km</p>
+        </div>
+        <div>
+          <img src="img/marker-icon-red.png" alt="bluemarker">
+          <p> more than 10 km</p>
+        </div>
+        <div>
+          <img src="img/marker-icon-gold.png" alt="bluemarker">
+          <p>no reference data</p>
+        </div>
+      </div>
+    </article>
+  </div>
+
+
+
+  <div id="map"></div>
+
+  <dialog id="modal-example">
+    <article>
+      <a href="#close" aria-label="Close" class="close" data-target="modal-example" onclick="toggleModal(event)"></a>
+      <h3>Select the right match!</h3>
+      <div id="change-city-modal">
+        <ul id="feature-list">
+        </ul>
+      </div>
+      <footer>
+        <a href="#cancel" role="button" class="secondary" data-target="modal-example"
+          onclick="toggleModal(event)">Cancel</a>
+      </footer>
+    </article>
+  </dialog>
+
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
+  <script src="js/modal.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/functions.js"></script>
+  <script src="js/geocode_leaflet.js"></script>
+  <script src="https://kit.fontawesome.com/0be9158514.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
